@@ -29,7 +29,8 @@ export default class Home extends Component {
         });
       })
       .catch((err) => {
-        console.log(err);
+        alert(err.message);
+        window.location = ('/');
       });
   };
 

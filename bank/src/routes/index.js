@@ -2,6 +2,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 import Home from './Home';
 import Activity from './Activity';
+import notLogged from './notLogged';
 import '../index.js';
 
 export {
@@ -9,4 +10,5 @@ export {
   SignUp,
   Home,
   Activity,
+  notLogged,
 };

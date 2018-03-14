@@ -28,24 +28,17 @@ class App extends Component {
   render() {
     const { loggedIn } = this.state;
     return (
-      <div className="App">
-        <div className="App-header">
-          <header>
-            { loggedIn === false ? <Link to="/"><img src={ logo } className="App-logo" alt="logo" /></Link> : null }
-            { loggedIn === true ? <Link to="/home"><img src={ logo } className="App-logo" alt="logo" /></Link> : null }
-            { loggedIn === true ? <button> settings </button> : null }
-
-          </header>
-        </div>
-        <div>
-          { loggedIn === false ? <div><Route path="/" exact component={ Pages.Login }></Route></div> : null }
-          { loggedIn === true ? <div><button className="logout" onClick={ this.doLogout }>Logout</button></div> : null }
-        </div>
-        <div>
-        <Route path="/signup" exact component={ Pages.SignUp }></Route>
-        <Route path="/home" exact component={ Pages.Home }></Route>
-        <Route path="/activity" exact component={ Pages.Activity }></Route>
-        </div>
+      <div>
+        <header className="App-header">
+          { loggedIn === false ? <Link to="/"><img src={ logo } className="App-logo" alt="logo" /></Link> : null }
+          { loggedIn === false ? <Route path="/signup" exact component={ Pages.SignUp }></Route> : null }
+          { loggedIn === true ? <Link to="/home"><img src={ logo } className="App-logo" alt="logo" /></Link> : null }
+          { loggedIn === true ? <button class="btn btn-outline-secondary float-right"> settings </button> : null }
+          { loggedIn === true ? <button class="btn btn-outline-secondary float-right" onClick={ this.doLogout }>Logout</button> : null }
+        </header>
+        { loggedIn === false ? <div><Route path="/" exact component={ Pages.Login }></Route></div> : null }
+        { loggedIn === true ? <Route path="/home" exact component={ Pages.Home }/> : <Route path="/home" exact component = { Pages.notLogged }/> }
+        { loggedIn === true ? <Route path="/activity" exact component={ Pages.Activity }/> : <Route path="/activity" exact component = { Pages.notLogged }/> }
       </div>
     );
   }

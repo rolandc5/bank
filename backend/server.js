@@ -9,7 +9,7 @@ server.use(cors());
 const port = process.env.PORT || 3030;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/number', { useMongoClient: true });
+mongoose.connect('mongodb://root:admin@ds012578.mlab.com:12578/bankingsystem', { useMongoClient: true });
 
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());

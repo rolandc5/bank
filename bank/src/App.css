@@ -1,3 +1,7 @@
+.App {
+  background: gray;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 50px;
@@ -6,19 +10,14 @@
 
 .App-header {
   display: flex;
-  flex-direction: row;
   background-color: #222;
   height: 60px;
   padding-top: .5%;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.settings {
+  float: right
 }
 
 .logout {
