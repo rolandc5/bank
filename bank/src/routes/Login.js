@@ -41,35 +41,29 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="LoginForm">
-        <form onSubmit={this.handleSubmit}>
-            <div>
+      <div class="container d-flex justify-content-center">
+        <form class="col-5" onSubmit={ this.handleSubmit }>
+          <div class="form-group">
               <input
-                id="formHorizontalEmail"
-                className="box"
+                class="form-control"
                 type="text"
                 value={ this.state.username }
                 onChange={ this.handleChangeUsername }
                 placeholder="Username"
               />
             </div>
-              <div>
-                <input
-                  id="formHorizontalPassword"
-                  className="box"
-                  type="password"
-                  value={ this.state.password }
-                  onChange={ this.handleChangePassword }
-                  placeholder="Password"
-                />
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="password"
+                value={ this.state.password }
+                onChange={ this.handleChangePassword }
+                placeholder="Password"
+              />
             </div>
-          <div>
-          <input className="button" type="submit" value="Login"/>
-          </div>
+            <input class="btn btn-secondary btn-block" type="submit" value="Login"/>
+            <Link class="btn btn-secondary btn-block" to="/signup">SignUp</Link>
         </form>
-      <div>
-      <Link to="/signup"><button className="button">SignUp</button></Link>
-      </div>
       </div>
     )
   }
